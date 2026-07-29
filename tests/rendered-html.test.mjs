@@ -24,6 +24,10 @@ test("server-renders Hesh IoT from the real product workflow", async () => {
   assert.match(html, /<meta(?=[^>]*name="twitter:image")(?=[^>]*content="http:\/\/localhost\/og\.png")[^>]*>/i);
   assert.match(html, /From board idea to live dashboard/i);
   assert.match(html, /model the device, define datastreams, generate Arduino code, prove the board loop, and operate it live/i);
+  assert.match(html, /ONE BRAND \/ TWO MODES/i);
+  assert.match(html, /Bold at the door\. Calm at the controls\./i);
+  assert.match(html, /Discovery mode/i);
+  assert.match(html, /Operation mode/i);
   assert.match(html, /href="http:\/\/iot\.rectronx\.com"/i);
   assert.match(html, /href="https:\/\/github\.com\/mahesh020795\/sparkiot"/i);
   for (const stage of ["Template", "Datastreams", "Device token", "Arduino code", "Board Test", "Live Dashboard"]) {

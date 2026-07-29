@@ -74,6 +74,12 @@ export default function Home() {
 
       <section className="ticker" aria-label="Product capabilities"><div>DEVICE TEMPLATES <i>✦</i> DATASTREAMS <i>✦</i> GENERATED ARDUINO CODE <i>✦</i> BOARD TEST <i>✦</i> LIVE DASHBOARDS <i>✦</i> HISTORY + CSV <i>✦</i></div></section>
 
+      <section className="brand-bridge section-shell" aria-labelledby="brand-bridge-title">
+        <div className="bridge-heading"><p className="section-label">ONE BRAND / TWO MODES</p><h2 id="brand-bridge-title">Bold at the door. Calm at the controls.</h2></div>
+        <article><span>DISCOVERY MODE</span><strong>Make the possibility feel immediate.</strong><p>Expressive typography and clear product stories help a first-time builder understand what Hesh IoT can unlock.</p></article>
+        <article><span>OPERATION MODE</span><strong>Make the next action feel obvious.</strong><p>Predictable surfaces and semantic status colour keep daily work comfortable from classroom bench to business fleet.</p></article>
+      </section>
+
       <section className="workflow section-shell" id="workflow">
         <div className="section-intro"><p className="section-label">01 / THE PRODUCT PATH</p><h2>Six steps.<br />No missing middle.</h2><p>The strongest part of Hesh IoT is not another dashboard. It is the guided path between a board in your hand and a control surface people can use.</p></div>
         <ol className="workflow-list">
