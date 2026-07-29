@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 async function render() {
@@ -26,6 +27,8 @@ test("server-renders Hesh IoT from the real product workflow", async () => {
   assert.match(html, /model the device, define datastreams, generate Arduino code, prove the board loop, and operate it live/i);
   assert.match(html, /Make IoT simple—from first datastream to daily operation\./i);
   assert.match(html, /<meta(?=[^>]*name="theme-color")(?=[^>]*content="#F25522")[^>]*>/i);
+  assert.match(html, /class="brand-word"[^>]*><strong>Hesh<\/strong><em>IoT<\/em>/i);
+  assert.match(html, /<footer class="site-footer section-shell">[\s\S]*?<strong>Make IoT simple\.<\/strong>/i);
   assert.match(html, /ONE BRAND \/ TWO MODES/i);
   assert.match(html, /Bold at the door\. Calm at the controls\./i);
   assert.match(html, /Discovery mode/i);
@@ -51,4 +54,12 @@ test("server-renders Hesh IoT from the real product workflow", async () => {
   assert.doesNotMatch(html, /Hesh IoT live dashboard preview/i);
   assert.doesNotMatch(html, /Everything between your board and your breakthrough/i);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|react-loading-skeleton/i);
+});
+
+test("keeps brand and status colours on semantic tokens", async () => {
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+  assert.match(css, /--orange:\s*#f25522/i);
+  assert.match(css, /--online:\s*#22a865/i);
+  assert.match(css, /\.gauge-green::before\s*{[^}]*var\(--online\)/i);
+  assert.doesNotMatch(css, /#2bc56d|#d94835/i);
 });
