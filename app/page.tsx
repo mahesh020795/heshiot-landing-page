@@ -25,7 +25,19 @@ const plans = [
 ];
 
 function Brand() {
-  return <span className="brand"><span className="brand-mark" aria-hidden="true"><i /><i /><i /></span><strong>HESH IOT</strong></span>;
+  return (
+    <span className="brand">
+      <span className="brand-circuit" aria-hidden="true">
+        <i className="circuit-rail rail-left" />
+        <i className="circuit-rail rail-right" />
+        <b className="circuit-link" />
+        <span className="circuit-node node-left" />
+        <span className="circuit-node node-center" />
+        <span className="circuit-node node-right" />
+      </span>
+      <span className="brand-word"><strong>Hesh</strong><em>IoT</em></span>
+    </span>
+  );
 }
 
 export default function Home() {
@@ -36,7 +48,7 @@ export default function Home() {
         <nav aria-label="Main navigation">
           <a href="#product">Product</a><a href="#workflow">Workflow</a><a href="#proof">Proof</a><a href="#pricing">Pricing</a>
         </nav>
-        <a className="button button-ink header-cta" href={appUrl}>Open Hesh IoT <span>↗</span></a>
+        <a className="button button-coral header-cta" href={appUrl}>Open Hesh IoT <span>↗</span></a>
       </header>
 
       <section className="hero" id="product">
@@ -44,6 +56,7 @@ export default function Home() {
           <p className="eyebrow"><span>●</span> The web-first device workspace</p>
           <h1>From board idea<br />to live dashboard.</h1>
           <p className="hero-lede">Model the device, define datastreams, generate Arduino code, prove the board loop, and operate it live—all in one guided workspace.</p>
+          <p className="brand-promise">Make IoT simple—from first datastream to daily operation.</p>
           <div className="hero-actions">
             <a className="button button-coral" href={appUrl}>Build your first device <span>↗</span></a>
             <a className="button button-paper" href="#workflow">See the product flow <span>↓</span></a>
@@ -133,7 +146,7 @@ export default function Home() {
 
       <section className="final-cta"><div className="orbit orbit-a" aria-hidden="true" /><div className="orbit orbit-b" aria-hidden="true" /><p>BOARD → CLOUD → CONTROL</p><h2>Your board. One clear path to live.</h2><a className="button button-coral" href={appUrl}>Build your first device <span>↗</span></a></section>
 
-      <footer className="site-footer section-shell"><a href="#top"><Brand /></a><p>From first datastream to daily operation.</p><div><a href="#workflow">Workflow</a><a href="#proof">Product</a><a href="#pricing">Pricing</a><a href={repoUrl}>GitHub ↗</a></div><small>© 2026 Hesh IoT · A Rectronx product</small></footer>
+      <footer className="site-footer section-shell"><a href="#top"><Brand /></a><p><strong>Make IoT simple.</strong><br /><span>From first datastream to daily operation.</span></p><div><a href="#workflow">Workflow</a><a href="#proof">Product</a><a href="#pricing">Pricing</a><a href={repoUrl}>GitHub ↗</a></div><small>© 2026 Hesh IoT · A Rectronx product</small></footer>
     </main>
   );
 }

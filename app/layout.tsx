@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { headers } from "next/headers";
 import "./globals.css";
@@ -16,6 +16,10 @@ const geistMono = Geist_Mono({
 const title = "Hesh IoT | From board idea to live dashboard";
 const description =
   "Model devices, define datastreams, generate Arduino code, test real boards, and run realtime IoT dashboards with Hesh IoT.";
+
+export const viewport: Viewport = {
+  themeColor: "#F25522",
+};
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();

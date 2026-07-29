@@ -24,6 +24,8 @@ test("server-renders Hesh IoT from the real product workflow", async () => {
   assert.match(html, /<meta(?=[^>]*name="twitter:image")(?=[^>]*content="http:\/\/localhost\/og\.png")[^>]*>/i);
   assert.match(html, /From board idea to live dashboard/i);
   assert.match(html, /model the device, define datastreams, generate Arduino code, prove the board loop, and operate it live/i);
+  assert.match(html, /Make IoT simple—from first datastream to daily operation\./i);
+  assert.match(html, /<meta(?=[^>]*name="theme-color")(?=[^>]*content="#F25522")[^>]*>/i);
   assert.match(html, /ONE BRAND \/ TWO MODES/i);
   assert.match(html, /Bold at the door\. Calm at the controls\./i);
   assert.match(html, /Discovery mode/i);
