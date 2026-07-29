@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const title = "Hesh IoT | Your hardware has something to say";
+const title = "Hesh IoT | From board idea to live dashboard";
 const description =
-  "Hesh IoT turns device signals into dashboards, decisions, and actions for makers, developers, and small product teams.";
+  "Model devices, define datastreams, generate Arduino code, test real boards, and run realtime IoT dashboards with Hesh IoT.";
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
@@ -32,7 +32,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title,
       description,
       type: "website",
-      images: [{ url: imageUrl, width: 1740, height: 909, alt: "Hesh IoT signal machine" }],
+      images: [{ url: imageUrl, width: 1740, height: 909, alt: "Hesh IoT product workflow" }],
     },
     twitter: {
       card: "summary_large_image",
